@@ -1,0 +1,16 @@
+.page-content {
+  max-width: $site-max-width;
+  margin: 0 auto;
+  padding: $space;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $brand-primary;
+  border-radius: 5px;
+  padding: $space $space 0 $space;
+  margin-bottom: $space;
+  box-shadow: 2px 2px 5px rgba($brand-primary, .3);
+}

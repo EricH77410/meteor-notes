@@ -29,7 +29,6 @@ const onEnterNotePage = (nextState) => {
     browserHistory.replace('/')
   } else {
     Session.set('selectedNoteId', nextState.params.id)
-    console.log(nextState)
   }
 }
 

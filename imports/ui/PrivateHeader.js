@@ -1,7 +1,7 @@
 import React from 'react'
 import { Accounts } from 'meteor/accounts-base'
 import { createContainer } from 'meteor/react-meteor-data'
-
+import { Session } from 'meteor/session'
 
 
 export const PrivateHeader = (props) => {

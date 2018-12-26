@@ -2,9 +2,7 @@ import React from 'react';
 
 const NoteListEmptyItem = () => {
   return (
-    <div>
-      <h5>There's no note to show, click the New Note button to create one.</h5>
-    </div>
+    <p className="empty-item">Create a note to get started.</p>
   )
 
 }

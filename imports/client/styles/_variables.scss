@@ -7,7 +7,7 @@ $dark-grey: #777777;
 $body-background-color: #fafafa;
 $body-default-color: #333333;
 //Body default font-family
-$font-default : Helvetica,
+$font-default: Helvetica,
 Arial,
 sans-serif;
 // Spacing
@@ -36,9 +36,7 @@ $hearder-bg: $brand-primary;
 $header-color: #fff;
 $header-height: 6rem;
 // item
-$item-bg: $ligth-grey;
-$item-border: darken($item-bg, 8%);
-$item-text-color: $dark-grey;
+$item-border-width: 4px;
 // Page content
 $page-content-sidebar-width: 30rem;
 $page-content-main-width: calc(#{$site-max-width} - #{$page-content-sidebar-width});

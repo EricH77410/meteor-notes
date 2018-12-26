@@ -1,38 +1,46 @@
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: $base-font-size;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $base-font-size;
+    background-color: $body-background-color;
+    color: $body-default-color;
 }
 
 h1 {
-  font-weight: 300;
-  margin-bottom: $space;
+    font-weight: 300;
+    margin-bottom: $space;
 }
 
 h2 {
-  font-size: $large;
-  margin-bottom: $space;
+    font-size: $large;
+    margin-bottom: $space;
 }
 
 p {
-  margin-bottom: $space;
+    margin-bottom: $space;
 }
 
 a {
-  color: #000000;
+    color: $body-default-color;
 }
 
-input[type=text], input[type=email], input[type=password] {
-  font-size: $base-font-size;
-  margin-bottom: $space;
-  padding: $input-spacing;
-  border: 1px solid $input-border;
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+    font-size: $base-font-size;
+    color: $body-default-color;
+    margin-bottom: $space;
+    padding: $input-spacing;
+    font-family: $font-default;
+    border: 1px solid $input-border;
 }

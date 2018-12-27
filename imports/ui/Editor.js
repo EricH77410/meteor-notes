@@ -4,12 +4,14 @@ import { browserHistory } from 'react-router'
 import { createContainer } from 'meteor/react-meteor-data'
 import { Session } from 'meteor/session'
 import { Notes } from '../api/notes'
+import Modal from 'react-modal'
 
 export class Editor extends React.Component{
 
   state = {
     title: '',
-    body: ''
+    body: '',
+    isModalOpen: false
   }
 
   componentDidUpdate(prevProps, prevState){
@@ -47,6 +49,10 @@ export class Editor extends React.Component{
     this.props.browserHistory.push('/dashboard')
   }
 
+  handleModalClose = () => {
+    this.setState({isModalOpen: false})
+  }
+
   render(){
 
     if (this.props.note){
@@ -67,8 +73,23 @@ export class Editor extends React.Component{
           >
           </textarea>
           <div>
-            <button onClick={ this.onDeleteNote } className="button button--del">Delete Note</button>
+            <button onClick={ () => this.setState({isModalOpen: true}) } className="button button--del">Delete Note</button>
           </div>
+
+          <Modal
+            isOpen={this.state.isModalOpen}
+            contentLabel="Confirm"
+            onRequestClose={this.handleModalClose}
+            className="boxed-view__box"
+            overlayClassName="boxed-view boxed-view--modal"
+          >
+            <h1>Confirm</h1>
+            <p>Do you really want to delete this note ?</p>
+            <div className="modal-button-container">
+              <button id="yes" className="button" onClick={this.onDeleteNote}>Yes</button>
+              <button className="button button--secondary" onClick={this.handleModalClose}>No</button>
+            </div>
+          </Modal>
           
         </div>
       )

@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor'
 import React from 'react';
 import expect from 'expect'
 import { mount } from 'enzyme'
+import { findDOMNode } from 'react-dom'
 
 import { Editor } from './Editor'
 
@@ -33,14 +34,24 @@ if (Meteor.isClient) {
       expect(wrapper.find('p').text()).toBe('Note not found.')
     })
 
-    it('should remove a note on delete click', function() {
+    it('should change the isOpenModal to true on delete click', function() {
       const wrapper = mount (<Editor browserHistory={browserHistory} call={call} selectedNoteId={notes[0]._id} note={notes[0]}/>)
+      wrapper.find('button').simulate('click')
+      //buttons[1].simulate('click')
+      expect(wrapper.state('isModalOpen')).toBe(true)
+      //expect(browserHistory.push).toHaveBeenCalledWith('/dashboard')
+      //expect(call).toHaveBeenCalledWith('notes.remove', notes[0]._id)
+    })
 
+    it('should remove a note after confirm', function(){
+      const wrapper = mount (<Editor browserHistory={browserHistory} call={call} selectedNoteId={notes[0]._id} note={notes[0]}/>)
+      
+      expect(wrapper.find('Modal').length).toBe(1)
       wrapper.find('button').simulate('click')
 
-      expect(browserHistory.push).toHaveBeenCalledWith('/dashboard')
-      expect(call).toHaveBeenCalledWith('notes.remove', notes[0]._id)
+      const nodes = findDOMNode(wrapper.find('Modal').node.portal)
 
+      console.log(nodes)
     })
 
     it('should update the note body on textarea change', function() {

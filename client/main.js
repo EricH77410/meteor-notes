@@ -29,6 +29,7 @@ Tracker.autorun(() => {
 
 Meteor.startup(()=>{
   Session.set('selectedNoteId', undefined)
-  Session.set('isNavOpen', false)
+  Session.set('isNavOpen', false)  
+  Session.set('searchTerm',undefined)
   ReactDOM.render(routes, document.getElementById('app'))
 })

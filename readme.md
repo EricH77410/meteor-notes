@@ -1,4 +1,4 @@
-# Notes App Projcet
+# Notes App Project
 
 This a simple notes app created with Meteor and React
 

@@ -38,8 +38,8 @@
     color: white;
     transition: all .3s;
     &:hover {
-        background: lighten($brand-primary, 20%);
-        color: red;
+        background: lighten($brand-primary, 40%);
+        color: #dc3545;
     }
 }
 
